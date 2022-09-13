@@ -7,9 +7,6 @@ public class checkword{
 		
 		
 		
-		
-		
-		
 public static  checkword(String word, String[] randomlet) {
 	Wordletters=word.toCharArray();
 
