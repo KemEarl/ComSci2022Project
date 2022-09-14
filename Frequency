@@ -1,22 +1,27 @@
 public class checkword{
 	public static void main(String[]args){
-		String[] ramdonlet=["B" ,"C" ,"D" ,"E" ,"F"];
+		String[] ramdonlet={"B" ,"C" ,"D" ,"E" ,"F"};
 		String word= "ddddeeeeeffffpslkkkdls";
+		checkword(word,ramdonlet);
 		
 		
+		}
 		
 		
-		
-public static  checkword(String word, String[] randomlet) {
-	Wordletters=word.toCharArray();
-
+public static void checkword(String word, String[] randomlet) {
+	char[] Wordletters=word.toCharArray();
+	int count=0;
 	int[] count= Frequency(Wordletters,randomlet);
-	String[] errors=;
+	
 	for (int k=0;k<count.length;k++){
 		if (count[k]==0){
 			System.out.println("Not all letters used");
 		}
+		count=count+count[k];
 	}
+	if (count==0){
+		System.out.println("None of the letters are used");
+		}
 }//checks if all letters are present atleast once 
 
 
