@@ -5,7 +5,7 @@ public class Checkword{
 		checkword(word,ramdonlet);
 		
 		
-		}
+		}//just tester main
 		
 		
 public static void checkword(String word, char[] randomlet) {
@@ -27,6 +27,7 @@ public static void checkword(String word, char[] randomlet) {
 
 
 
+
 public static int[] Frequency(char[] Wordletters,char[] randomlet){
 	int[] Countarray=new int[randomlet.length];
 
@@ -42,5 +43,5 @@ public static int[] Frequency(char[] Wordletters,char[] randomlet){
 	}
 	
 	return Countarray;
-}//creates a histrogram which checks the frequancy of letters
+}//creates a histrogram which checks the frequancy of letters returns a int array with frequancy in order of char list of the letters provided
 }
