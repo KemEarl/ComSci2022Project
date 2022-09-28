@@ -6,7 +6,8 @@ public class Frequancy(
 	public Frequancy(String words,char letarrays){
 		this.letarray=letarrays;
 		this.word=words.toCharArray();
-	}
+	}//constructor
+	
 	public void checkword() {
 		int cnt=0;
 		int[] count= Frequency();
@@ -34,7 +35,7 @@ public class Frequancy(
 
 		}
 		return Countarray;
-	}//creates a histrogram which checks the frequancy of letters returns a int array with frequancy in order of char list of the letters provided
+	}//returns a int array with frequancy of letters in order of char list of the letters provided
 }
 
 }
