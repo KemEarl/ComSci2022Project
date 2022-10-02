@@ -1,3 +1,5 @@
+//Created by Zaza and Editited by Zaza.
+//Calvin Added second Frequency constructor in colaboration with Zaza.
 public class Frequancy{
 	private int[] freq;
 	private char[] word;//might not need this one
