@@ -9,7 +9,7 @@ public class dictRead{
 	
 	public dictRead(){
 		try {
-			this.arrayOfWords = new String[82178];
+			this.arrayOfWords = new String[82179];
 			int NumOfWords = 0;
 			File file = new File("ListOfWords2.txt");
 			Scanner myFile = new Scanner(file);
@@ -18,7 +18,7 @@ public class dictRead{
 				NumOfWords ++;
 			}
 			myFile.close();
-			System.out.println(NumOfWords);
+			//System.out.println(NumOfWords);
 		} catch (FileNotFoundException e){
 			System.out.println("File Error Has Occured");
 			e.printStackTrace();
@@ -29,6 +29,37 @@ public class dictRead{
 		return this.arrayOfWords;
 	}//getter
 	
+	public Boolean ValidRand(int min, String[] lettersIn){
+		Boolean foundLetter = false, wordGood = false;
+		int cnt = 0;
+		
+		for (int i = 0; i < arrayOfWords.length; i++){
+			char[] lettersInArray = arrayOfWords[i].toCharArray();
+			wordGood = true;
+			for (int j = 0; j < lettersInArray.length; j++){
+				foundLetter = false;
+				for (int k = 0; k < lettersIn.length; k++){
+					if (lettersInArray[j] == lettersIn[k].charAt(0)){
+						foundLetter = true;
+					}
+				}//cycles though letters given
+				if (!foundLetter){
+					wordGood = false;
+					break;
+				}
+			}//cycles through the letters in the current word from dict
+			if (wordGood){
+				System.out.println(arrayOfWords[i]);
+				cnt++;
+			}
+		}//cycles throught the words in dict
+		
+		if (cnt >= min){
+			return true;
+		}
+		return false;
+		
+	}//method to check that a vaild number of words can be made given a number of letters
 	
 	public Boolean checkInDict(String word){
 		int index = (this.arrayOfWords.length)/2, LB = 0, UB = (this.arrayOfWords.length)-1, Mb = 0, diff = 0;
