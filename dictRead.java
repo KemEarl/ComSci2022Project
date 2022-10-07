@@ -29,6 +29,28 @@ public class dictRead{
 		return this.arrayOfWords;
 	}//getter
 	
+	
+	
+	public Boolean ValidWord(String n, String[] lettersIn){
+		char[] lettersInArray = n.toCharArray();
+		boolean wordGood = true;
+		for (int j = 0; j < lettersInArray.length; j++){
+			boolean foundLetter = false;
+			for (int k = 0; k < lettersIn.length; k++){
+				if (("" + lettersInArray[j]).equals(lettersIn[k])){
+					foundLetter = true;
+				}
+			}//cycles though letters given
+			if (!foundLetter){
+				wordGood = false;
+				break;
+			}
+		}//cycles through the letters in the current word from dict
+		return wordGood;
+		
+	}
+	
+	
 	public Boolean ValidRand(int min, String[] lettersIn){
 		Boolean foundLetter = false, wordGood = false;
 		int cnt = 0;
