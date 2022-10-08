@@ -1,7 +1,7 @@
 public class Leveling {
 
-    private static int pts_req;
-    private static int tempts;
+    private static int pts_req=0;
+    private static int tempts=0;
     private static String [] let_me;
 
     public Leveling() {
@@ -9,15 +9,11 @@ public class Leveling {
         tempts = 0;
     }
 	
-    public static void FixedLeveling(int Lvl) {
-        if (Lvl == 1) {
-            //
+    public void FixedLeveling(int Lvl) {
+        if (Lvl <= 10) {
+		this.pts_req+=100;
+		this.tempts+=3;
         }
-
-        if (Lvl == 2) {
-            //
-        }
-        
     }
 
     public static void RandLeveling(int Lvl) {
