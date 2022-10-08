@@ -12,7 +12,8 @@ public class RandomLetGen {
     Random ro = new Random();
     int blue = ro.nextInt(Lim);
     return blue;
-  }
+      
+  } 
   /////////////////////////////////////////////////////////////////////////////
   public static boolean RepTest(int sub []) {
     int far = sub.length;
@@ -29,7 +30,7 @@ public class RandomLetGen {
     } else {
       return false;
     }
-  }
+  } //checks if any letters are repeated
   /////////////////////////////////////////////////////////////////////////////
   public  String [] RanLetGen(int LetNum) {
 
@@ -58,7 +59,7 @@ public class RandomLetGen {
     RanLetArr = new String [LetNum];
     RanLetArr = LetOut;
     return RanLetArr;
-  }
+  } //Generates random letters
   /////////////////////////////////////////////////////////////////////////////
   public static boolean VowelCheck(String sub [], String Vows []) {
     int far = sub.length;
@@ -77,4 +78,4 @@ public class RandomLetGen {
       return true;
     }
   }
-}
+} //randomly picks vowel letters if random generated letters do not have vowels
