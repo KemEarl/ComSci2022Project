@@ -32,7 +32,8 @@ public class RandomLetGen {
     }
   } //checks if any letters are repeated
   /////////////////////////////////////////////////////////////////////////////
-  public  String [] RanLetGen(int LetNum) {
+  public  String [] RanLetGen() {
+    int LetNum = 7;
 
     String [] Let = {"A" ,"B" ,"C" ,"D" ,"E" ,"F" ,"G" ,"H" ,"I" ,"J" ,"K" ,"L"
     ,"M" ,"N" ,"O" ,"P" ,"Q" ,"R" ,"S" ,"T" ,"U" ,"V" ,"W" ,"X" ,"Y" ,"Z"};
