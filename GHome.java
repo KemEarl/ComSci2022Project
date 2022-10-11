@@ -68,28 +68,28 @@ public class GHome extends JFrame implements ActionListener {
 		panel.setLayout(null);
 		panel.setBackground(Color.DARK_GRAY);
 		///
-		title.setBounds(250, 25, 200, 30);
-		title.setFont(new Font("Courier New", Font.BOLD, 22));
+		title.setBounds(250, 45, 200, 30);
+		title.setFont(new Font("Times New Roman", Font.BOLD, 27));
 		title.setForeground(Color.WHITE);
 
-		subtitle.setBounds(180, 50, 300, 30);
-		subtitle.setFont(new Font("Courier New", Font.ITALIC, 17));
+		subtitle.setBounds(170, 95, 400, 30);
+		subtitle.setFont(new Font("Courier New", Font.ITALIC, 20));
 		subtitle.setForeground(Color.WHITE);
 
 		panel.add(title);
 		panel.add(subtitle);
 		panel.add(gamepan);
 
-		nam.setBounds(100, 250, 150, 50);
-		nam.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		nam.setBounds(80, 250, 150, 50);
+		nam.setFont(new Font("Times New Roman", Font.PLAIN, 24));
 		nam.setForeground(Color.WHITE);
 		panel.add(nam);
 
-		player_nam.setBounds(250, 265, 150, 20);
-		player_nam.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+		player_nam.setBounds(250, 260, 200, 30);
+		player_nam.setFont(new Font("Times New Roman", Font.PLAIN, 20));
 		panel.add(player_nam);
 
-		play.setBounds(250, 350, 150, 50);
+		play.setBounds(250, 350, 200, 50);
 		play.addActionListener(new GHome());
 		panel.add(play);
 		////////////////////////////////////////////////////////////////////////////////
@@ -284,6 +284,8 @@ public class GHome extends JFrame implements ActionListener {
 				gamepan.setVisible(true);
 				play.setVisible(false);
 				player_nam.setVisible(false);
+				//title.setVisible(false);
+				subtitle.setVisible(false);
 			}
 			else {
 				JOptionPane.showMessageDialog(panel, "Please Enter a Player Name");
