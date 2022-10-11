@@ -10,7 +10,7 @@ public class dictRead{
 		try {
 			this.arrayOfWords = new String[82178];
 			int NumOfWords = 0;
-			File file = new File("ListOfWords2.txt");
+			File file = new File("ListOfWords.txt");
 			Scanner myFile = new Scanner(file);
 			while (myFile.hasNextLine()){
 				this.arrayOfWords[NumOfWords] = myFile.nextLine();
