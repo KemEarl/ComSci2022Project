@@ -32,7 +32,7 @@ public class Leveling {
     }
 
     public boolean CheckLeveling(int Lvl) {
-        if (level > 10) {
+        if (level < 10) {
             return true;
         }
         else {
