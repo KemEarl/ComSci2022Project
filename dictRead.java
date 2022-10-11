@@ -136,7 +136,7 @@ public class dictRead{
 	
 	public Boolean checkInDict(String word){	//method that checks if a given word is in the dictionary.
 		word = word.toLowerCase();
-		int index = (this.arrayOfWords.length)/2, LB = 0, UB = (this.arrayOfWords.length)-1, Mb = 0, diff = 0;
+		int LB = 0, UB = (this.arrayOfWords.length)-1, Mb = 0, diff = 0;
 		
 		while (LB <= UB){
 			Mb = (LB+UB)/2;
