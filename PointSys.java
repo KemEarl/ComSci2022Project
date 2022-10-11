@@ -1,9 +1,7 @@
-import java.util.*;
-
 public class PointSys {
 	private int point;
 	
-	public PointSys(String word){
+	public PointSys(){
 		this.point = 0;
 	}
 
@@ -21,7 +19,6 @@ public class PointSys {
         }
 }
 	public void Check_Feq(String word){
-		int point = 0;
 		int cnt[] = new int[256];
 		int strl = word.length();
 		int match = 0;
@@ -49,10 +46,7 @@ public class PointSys {
 		//checking length
 		if (word_length < 3) {
 			System.out.println("Word too short");
-			attempts = attempts - 1;
-			System.out.println("You now have " + attempts + " attempts left.");
-			}
-		
+		}
 			else {
 				if (word_length >= 7) {
 					this.point = this.point + 25;
