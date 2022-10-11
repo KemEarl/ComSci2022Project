@@ -34,7 +34,7 @@ public class GHome extends JFrame implements ActionListener {
 	private static JLabel startnote = new JLabel("Start the Level ? : ");
 	private static JButton start = new JButton("Start");
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	private static Dict ob = new Dict();
+	private static dictRead ob = new dictRead();
 	private static List<String> tried =new ArrayList<String>();
 	private static String word;
 	private static String [] letters;
@@ -203,25 +203,34 @@ public class GHome extends JFrame implements ActionListener {
 		//OK Button
 		if (e.getSource() == ok) {
 			word = (user.getText()).toLowerCase();
-			if (tried.contains(word) == true) {
-				JOptionPane.showMessageDialog(panel, "You Have Already Used This Word.");
-			}
-
-			//System.out.println(Arrays.toString(Dic));
-			boolean there = ob.checkInDict(word);
-			System.out.println(there);
-			if (!(there == true)) {
-				JOptionPane.showMessageDialog(panel, "The word " + "'" + word + "'" + " does not exist");
-			} else {
-				newbie.incScore(op.fullAssPts(word));;
-				pts_l.setText("Points: "+newbie.getScore());
-				al.append(word.toUpperCase()+"\n");
-			}
-
 			newbie.decAttempts();
 			att_l.setText("Attempts: "+newbie.getAttempts());
 
-			if (newbie.getAttempts() < 1) {
+			if (ob.ValidWord(word.toUpperCase(), letters) == false) {
+				JOptionPane.showMessageDialog(panel, "You Have Used An Invalid Letter.");
+			} 
+			else {
+				if (tried.contains(word) == true) {
+					JOptionPane.showMessageDialog(panel, "You Have Already Used This Word.");
+				} 
+				else {
+					boolean there = ob.checkInDict(word);
+					System.out.println(there);
+					if (!(there == true)) {
+						JOptionPane.showMessageDialog(panel, "The word " + "'" + word + "'" + " does not exist");
+					} 
+					else {
+						newbie.incScore(op.fullAssPts(word));;
+						pts_l.setText("Points: "+newbie.getScore());
+						al.append(word.toUpperCase()+"\n");
+					}
+						}
+			}
+
+
+			
+
+			if ((newbie.getAttempts() < 1) && (stairs.CheckProgress(newbie.getScore()) == false)) {
 				ok.setVisible(false);
 				user.setVisible(false);
 				letpan.setBounds(50, 125, 275, 325);
@@ -230,11 +239,15 @@ public class GHome extends JFrame implements ActionListener {
 				start.setVisible(true);
 				startnote.setVisible(true);
 				al.setVisible(false);
-				JOptionPane.showMessageDialog(gamepan, "Attempts exhausted");
+				JOptionPane.showMessageDialog(gamepan, "Attempts exhausted. Try Level again.");
 				att_l.setVisible(false);
 				pts_l.setVisible(true);
 				lvl_req.setVisible(false);
 				let.setText("-");
+
+				play_lvl.setText("Current Level: "+Player.getLvl());
+				newbie.resetScore();
+				pts_l.setText("Points: 0");
 			}
 
 			user.setText("");
@@ -258,6 +271,7 @@ public class GHome extends JFrame implements ActionListener {
 
 				play_lvl.setText("Current Level: "+Player.getLvl());
 				newbie.resetScore();
+				pts_l.setText("Points: 0");
 			}
 
 		}
