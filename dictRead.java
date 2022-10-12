@@ -82,7 +82,6 @@ public class dictRead{
 	
 	
 	public Boolean ValidWord(String n, String[] lettersIn){	//checks to see if you can make the given word out of the given letters
-		n = n.toLowerCase();
 		char[] lettersInArray = n.toCharArray();
 		boolean wordGood = true;
 		for (int j = 0; j < lettersInArray.length; j++){
